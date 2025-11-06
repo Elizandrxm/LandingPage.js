@@ -15,14 +15,29 @@
      <title>TechGuard</title>
   </head>  
 <body>
-    <header> 
-       <nav>
-    <img class="logo" src="assets/img/Logo branco .png" alt="Logo TechGuard">
-     <button id="dark-mode-btn">🌙 Modo Escuro</button>
-    <img src="assets/img/favicon noturno.png" alt="fanficon noturno">
-    
-       </nav>
- </header>
+ <header> 
+    <nav>
+        <img class="logo" src="assets/img/Logo branco .png" alt="Logo TechGuard" id="logo">
+        
+        <div class="theme-switcher">
+            <img 
+                src="assets/img/Favicon claro.png" 
+                alt="Ícone Modo Claro" 
+                class="icon light-icon" 
+                id="light-mode-icon" 
+                onclick="setTheme('light')"
+            >
+            
+            <img 
+                src="assets/img/favicon noturno.png" 
+                alt="Ícone Modo Escuro" 
+                class="icon dark-icon" 
+                id="dark-mode-icon" 
+                onclick="setTheme('dark')"
+            >
+        </div>
+    </nav>
+</header>
 <!--informaçao do site -->
  <main>
      <section>
