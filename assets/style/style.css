@@ -1,0 +1,96 @@
+/* CSS reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* Estilo desktop */
+}header img{
+    display: block;
+    margin:75px 0 0 360px;
+    text-align: center;
+
+}
+
+h1{
+    color: black;
+    font-size:  65px;
+    font-weight: bold;
+    font-family: "Unbounded", cursive;
+    font-style: normal;
+    font-display: swap;
+    text-align: center;
+    margin-top: 60px;
+}
+h1 span,a{
+   color: rgb(240, 163, 21);
+}
+p{
+    color: black;
+    font-size: 24px;
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-display: swap;
+    text-align: center;
+    margin: 40px auto;
+}
+a{
+font-family: "Poppins", sans-serif;
+background-color: rgb(240, 163, 21);
+color: white;
+text-decoration: none;
+font-size: 24px;
+border-radius: 36px;
+width: 340px;
+height: 66px;
+display: block;
+line-height: 66px;
+text-align: center;
+margin: 40px auto;
+}
+a:hover{
+    background-color: rgb(5, 5, 5);
+    color: rgb(245, 245, 245);
+    transition: 0.3s;
+}
+.img-celulares{
+    display: block;
+    margin: 0 auto;
+    width: 792px;
+    height: 446px;
+}
+/* Estilo tablet */
+@media (max-width: 768px){
+   
+    header img{
+        margin: 65px 0 0 60px;
+         height: auto;
+    }
+    p{
+        width: 648px;
+         
+    }
+}
+/* estilo celular */
+
+@media(max-width: 375px){
+    header img{
+        margin: 32px 0 0;
+    }
+}
+h1{
+    font-size: 40px;
+
+}
+h1{
+    font-size: 40px;
+}
+p{
+    font-size: 20px;
+width: 340px;
+}
+section .img-celulares{
+    width: 340px;
+    height: 230px;
+
+}
