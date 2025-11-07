@@ -7,7 +7,7 @@ function setTheme(themeName) {
         document.body.classList.remove('dark');
     }
     
-    // 2. Salva a preferência do usuário no navegador
+    // Salva a preferência do usuário no navegador
     localStorage.setItem('theme', themeName);
 }
 
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (savedTheme) {
         setTheme(savedTheme);
     } else {
-        // Opcional: Verifica preferência do sistema, senão define 'light'
+        //  Verifica preferência do sistema, senão define 'light'
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
              setTheme('dark');
         } else {
