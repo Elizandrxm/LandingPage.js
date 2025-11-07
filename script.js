@@ -1,5 +1,6 @@
+// A função que será chamada ao clicar nos ícones
 function setTheme(themeName) {
-    // 1. Aplica a classe CSS no body
+    // 1. Aplica ou remove a classe 'dark' no body
     if (themeName === 'dark') {
         document.body.classList.add('dark');
     } else {
@@ -12,14 +13,13 @@ function setTheme(themeName) {
 
 // Verifica a preferência do usuário ao carregar a página
 document.addEventListener('DOMContentLoaded', () => {
-    // Tenta obter o tema salvo
     let savedTheme = localStorage.getItem('theme');
 
     // Se houver um tema salvo, aplica
     if (savedTheme) {
         setTheme(savedTheme);
     } else {
-        // Opcional: Se não houver tema salvo, você pode aplicar o padrão do sistema
+        // Opcional: Verifica preferência do sistema, senão define 'light'
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
              setTheme('dark');
         } else {

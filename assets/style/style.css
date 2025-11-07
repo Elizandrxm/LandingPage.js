@@ -1,20 +1,92 @@
+
 /* CSS reset */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-    /* Estilo desktop */
-}header img{
-    display: block;
-    margin:75px 0 0 360px;
-    text-align: center;
-
 }
 
-h1{
+/* ESTILOS BASE (MODO CLARO PADRÃO) E FONTES             */
+/* ----------------------------------------------------- */
+
+body {
+    /* Cor de fundo padrão (modo claro) */
+    background-color: #ffffff;
+    /* Cor do texto padrão (modo claro) */
+    color: #333333; 
+    /* Transição suave para a mudança de cor */
+    transition: background-color 0.3s, color 0.3s; 
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ESTILOS DO CABEÇALHO (HEADER) E NAVEGAÇÃO (NAV)       */
+/* ----------------------------------------------------- */
+
+header {
+    width: 100%;
+    /* Remove a necessidade de margin fixa no header/nav */
+}
+
+nav {
+    display: flex; /* Habilita Flexbox */
+    justify-content: space-between; /* Logo na esquerda, Ícones na direita */
+    align-items: center; /* Alinha verticalmente */
+    min-height: 100px; /* Altura mínima para o cabeçalho */
+    padding: 0 10%; /* Adiciona um padding nas laterais (10% de cada lado) */
+}
+
+.logo {
+    display: block;
+    /* Ajuste o tamanho do seu logo conforme a necessidade */
+    height: auto;
+    width: 150px; 
+    margin: 0; /* Remove a margem fixa antiga */
+}
+
+/* ESTILOS DO TEMA (ICONES)                              */
+/* ----------------------------------------------------- */
+
+.theme-switcher {
+    display: flex; /* Ícones lado a lado */
+    align-items: center;
+    /* Remove o posicionamento absoluto */
+}
+
+.theme-switcher .icon {
+    width: 30px; /* Tamanho dos ícones */
+    height: 30px;
+    cursor: pointer;
+    margin-left: 15px; /* Espaço entre os ícones */
+    /* Garante que o ícone escuro no modo claro e vice-versa seja visível (se for SVG preto/branco) */
+    filter: none; 
+}
+
+/* POR PADRÃO (light-mode) */
+.light-icon {
+    display: none; /* Esconde o sol/dia no modo claro */
+}
+.dark-icon {
+    display: block; /* Mostra a lua/noite no modo claro */
+}
+
+/* === NO MODO ESCURO (body.dark) === */
+body.dark .light-icon {
+    display: block; /* Mostra o sol/dia no modo escuro */
+    filter: invert(1); /* Deixa o ícone branco, se for preto */
+}
+
+body.dark .dark-icon {
+    display: none; /* Esconde a lua/noite no modo escuro */
+}
+
+/* ESTILOS DO CONTEÚDO PRINCIPAL (MAIN)                  */
+/* ----------------------------------------------------- */
+
+h1 {
     color: rgb(9, 9, 9);
-    font-size:  65px;
+    font-size: 65px;
     font-weight: bold;
     font-family: "Unbounded", cursive;
     font-style: normal;
@@ -22,10 +94,10 @@ h1{
     text-align: center;
     margin-top: 60px;
 }
-h1 span,a{
-   color: rgb(240, 163, 21);
+h1 span, a {
+    color: rgb(240, 163, 21);
 }
-p{
+p {
     color: black;
     font-size: 24px;
     font-family: Poppins, sans-serif;
@@ -34,117 +106,112 @@ p{
     text-align: center;
     margin: 40px auto;
 }
-a{
-font-family: "Poppins", sans-serif;
-background-color: rgb(240, 163, 21);
-color: rgb(26, 26, 26);
-text-decoration: none;
-font-size: 24px;
-border-radius: 36px;
-width: 340px;
-height: 66px;
-display: block;
-line-height: 66px;
-text-align: center;
-margin: 40px auto;
+a {
+    font-family: "Poppins", sans-serif;
+    background-color: rgb(240, 163, 21);
+    color: rgb(26, 26, 26);
+    text-decoration: none;
+    font-size: 24px;
+    border-radius: 36px;
+    width: 340px;
+    height: 66px;
+    display: block;
+    line-height: 66px;
+    text-align: center;
+    margin: 40px auto;
+    transition: background-color 0.3s, color 0.3s;
 }
-a:hover{
+a:hover {
     background-color: rgb(5, 5, 5);
     color: rgb(245, 245, 245);
-    transition: 0.3s;
 }
-.img-celulares{
+.img-celulares {
     display: block;
     margin: 0 auto;
     width: 792px;
     height: 446px;
+    transition: filter 0.3s;
 }
 
-/* ======== Estilo modo escuro ======== */
+
+/* ESTILOS MODO ESCURO (DARK MODE)                       */
+/* ----------------------------------------------------- */
+
 body.dark {
-  background-color: #121212;
-  color: #f5f5f5;
+    background-color: #121212;
+    color: #f5f5f5;
+}
+
+body.dark h1 {
+    color: #e0e0e0;
 }
 
 body.dark h1 span, 
 body.dark a {
-  color: #f5b32f;
+    color: #f5b32f;
+}
+
+body.dark p {
+    color: #e0e0e0;
 }
 
 body.dark a {
-  background-color: #f5b32f;
-  color: #1a1a1a;
+    background-color: #f5b32f;
+    color: #1a1a1a;
 }
 
 body.dark a:hover {
-  background-color: #f6f0f0;
-  color: #f5b907;
+    background-color: #f6f0f0;
+    color: #f5b907;
 }
-body.dark p,h1 {
-  color: #e0e0e0;
-}
-body.dark header img,
+
+/* Efeito para imagens no modo escuro (deixa menos brilhante) */
+body.dark .logo,
 body.dark .img-celulares {
-  filter: brightness(0.8);
-}
-/* 3. Ajusta o posicionamento do theme-switcher (ícones) */
-.theme-switcher {
-    display: flex; /* Para garantir que os dois ícones fiquem lado a lado */
-    align-items: center;
-    /* Remove o position: absolute; para o Flexbox fazer o trabalho */
+    filter: brightness(0.7) contrast(1.1);
 }
 
-.theme-switcher .icon {
-    width: 30px; 
-    height: 30px;
-    cursor: pointer;
-    margin-left: 10px; /* Espaçamento entre o ícone claro e o escuro */
-}
-
-/* === Lógica de Mostrar/Esconder os Ícones === */
-
-/* POR PADRÃO (light-mode) */
-/* O ícone de sol/dia (light-icon) deve estar escondido, pois já está claro */
-.light-icon {
-    display: none;
-}
-/* O ícone de lua/noite (dark-icon) deve estar visível, para o usuário poder clicar e escurecer */
-.dark-icon {
-    display: block;
-}
+/* ----------------------------------------------------- */
+/* ESTILOS RESPONSIVOS (MEDIA QUERIES)                   */
+/* ----------------------------------------------------- */
 
 /* Estilo tablet */
 @media (max-width: 768px){
-   
-    header img{
-        margin: 65px 0 0 60px;
-         height: auto;
+    nav {
+        padding: 0 5%;
+        min-height: 80px;
     }
-    p{
-        width: 648px;
-         
+    h1 {
+        font-size: 50px;
+    }
+    p {
+        width: 90%;
+        font-size: 20px;
+    }
+    .img-celulares {
+        width: 100%;
+        height: auto;
+        max-width: 600px;
     }
 }
-/* estilo celular */
 
-@media(max-width: 375px){
-    header img{
-        margin: 32px 0 0;
+/* Estilo celular */
+@media(max-width: 480px){
+    h1 {
+        font-size: 36px;
     }
-}
-h1{
-    font-size: 40px;
-
-}
-h1{
-    font-size: 40px;
-}
-p{
-    font-size: 20px;
-width: 340px;
-}
-section .img-celulares{
-    width: 340px;
-    height: 230px;
-
+    p {
+        font-size: 18px;
+    }
+    a {
+        width: 90%;
+        font-size: 20px;
+    }
+    .logo {
+        width: 120px;
+    }
+    .theme-switcher .icon {
+        width: 25px;
+        height: 25px;
+    }
 }
